@@ -1,0 +1,19 @@
+{
+    "cSpell.ignorePaths": [
+      "MY_README.md",
+      "analysis_options.yaml",
+      "pubspec.yaml",
+
+      "**/package-lock.json",
+      "**/node_modules/**",
+      "**/vscode-extension/**",
+      "**/.git/objects/**",
+      ".vscode"
+    ],
+
+    // DART
+    "dart.enableSdkFormatter": true,
+    "dart.lineLength": 100,
+    "dart.autoImportCompletions": true,
+    "editor.formatOnSave": true
+}
