@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:async';
 
 const MAX_ALIVE = 3;
 const MIN_ALIVE = 2;
@@ -135,4 +136,22 @@ class Generation {
   }
 
   int _getAmountByAliveCell(bool isAlive) => isAlive ? 1 : 0;
+}
+
+class CellRepository {
+  final Stream stream;
+
+  // for (final row in generation.matrix) {
+  //   print(row);
+  // }
+
+  CellRepository() : stream = Stream.periodic(Duration(seconds: 1));
+}
+
+class GenerationService {
+  GenerationService(
+    this._cellRepository,
+  );
+
+  final CellRepository _cellRepository;
 }
