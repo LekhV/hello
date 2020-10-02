@@ -10,6 +10,8 @@ import 'package:hello/features/game_life/generation.dart';
 import 'package:hello/features/game_life/widgets/custom_button_widget.dart';
 import 'package:hello/features/game_life/widgets/generation_cells_widget.dart';
 
+import '../../localizations.dart';
+
 class GameLifeScreen extends StatefulWidget {
   GameLifeScreen();
 
@@ -65,7 +67,12 @@ class _GameLifeScreenState extends State<GameLifeScreen> {
             ),
             if (currentGeneration != null) ...{
               GenerationCellsWidget(currentGeneration.matrix),
-            }
+            },
+            Text(
+              AppLocalizations.of(context).title,
+              style: TextStyle(fontSize: 24),
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),
