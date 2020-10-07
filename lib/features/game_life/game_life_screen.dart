@@ -4,6 +4,7 @@ import 'dart:async';
 /* FLUTTER */
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hello/features/example_language/change_language_screen.dart';
 
 /* COMPONENTS */
 import 'package:hello/features/game_life/generation.dart';
@@ -39,6 +40,7 @@ class _GameLifeScreenState extends State<GameLifeScreen> {
     final textOnButton = currentGeneration == null ? "Start game" : "Next step";
     final iconPlayGame = isAutomaticPlayGame ? Icons.stop : Icons.play_arrow;
     final onTapIcon = isAutomaticPlayGame ? stopAutomaticPlayGame : automaticPlayGame;
+    final locale = AppLocalizations.of(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -51,6 +53,10 @@ class _GameLifeScreenState extends State<GameLifeScreen> {
             CustomButtonWidget(
               onTap: startGame,
               textOnButton: textOnButton,
+            ),
+            CustomButtonWidget(
+              onTap: () => Navigator.of(context).push(ChangeLanguageScreen.getPageRoute()),
+              textOnButton: "Next screen",
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +75,7 @@ class _GameLifeScreenState extends State<GameLifeScreen> {
               GenerationCellsWidget(currentGeneration.matrix),
             },
             Text(
-              AppLocalizations.of(context).title,
+              locale.title,
               style: TextStyle(fontSize: 24),
               textAlign: TextAlign.center,
             ),

@@ -16,8 +16,8 @@ class CustomButtonWidget extends StatelessWidget {
     return CupertinoButton(
       onPressed: onTap,
       child: Container(
-        width: 200,
-        color: Colors.lime,
+        width: 120,
+        color: Colors.grey[300],
         child: Text(
           textOnButton,
           textAlign: TextAlign.center,

@@ -33,6 +33,12 @@ dependencies:
   cupertino_icons: ^1.0.0
   intl: ^0.16.1
 
+  get_it: ^5.0.1
+  provider: ^4.3.2
+  shared_preferences: ^0.5.12
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
